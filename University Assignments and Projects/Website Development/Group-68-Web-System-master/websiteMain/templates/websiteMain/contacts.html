@@ -1,0 +1,23 @@
+{% extends 'websiteMain/base.html' %}
+{% block body %}
+
+<h1>Who we are</h1>
+
+<div class="container">
+{% for i in names %}
+<div class="media">
+  <div class="media-left">
+    <img src="{{ i.0 }}" class="media-object" style="width:100px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ i.1 }}</h4>
+    <p>Email: <a href="">{{ i.2 }}</a></p>
+    <p>Role: {{i.3}}</p>
+  </div>
+</div>
+
+<hr>
+{% endfor %}
+
+
+{% endblock %}

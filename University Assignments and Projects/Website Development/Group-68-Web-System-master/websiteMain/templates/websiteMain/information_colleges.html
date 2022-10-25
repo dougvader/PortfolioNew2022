@@ -1,0 +1,27 @@
+{% extends 'websiteMain/base.html' %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+	<h1>College Information Page</h1>
+	<ul class="pager">
+		<li class="previous"><a href="http://127.0.0.1:8000/categories">Categories</a></li>
+	</ul>
+	<div class="list-group">
+	<table class="table">
+	<tbody>
+	{% for college in all_colleges %}
+		<tr>
+		<td><a href="/college_ID/{{college.college_ID}}" class="list-group-item">{{ college.name }}</a></td>
+		<td><a href="/favourite_college/{{ college.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</div>
+{% else %}
+	<h1>End of information</h1>
+{% endif %}
+
+
+{% endblock %}

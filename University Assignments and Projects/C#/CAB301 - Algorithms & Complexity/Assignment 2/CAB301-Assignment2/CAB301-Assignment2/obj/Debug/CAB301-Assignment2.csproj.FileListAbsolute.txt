@@ -1,0 +1,8 @@
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\bin\Debug\CAB301-Assignment2.exe.config
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\bin\Debug\CAB301-Assignment2.exe
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\bin\Debug\CAB301-Assignment2.pdb
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\obj\Debug\CAB301-Assignment2.csprojResolveAssemblyReference.cache
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\obj\Debug\CAB301-Assignment2.csproj.CoreCompileInputs.cache
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\obj\Debug\CAB301-Assignment2.exe
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\obj\Debug\CAB301-Assignment2.pdb
+D:\Files\Documents\UNI\Sem1 2018\CAB301\Assignment2\CAB301-Assignment2\CAB301-Assignment2\obj\Debug\CAB301-Assignment2.csproj.ResolveComReference.cache

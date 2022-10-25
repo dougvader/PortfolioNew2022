@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- load static css files-->
+{% load staticfiles %}
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel = "stylesheet"
+    type = "text/css"
+    href="{% static 'websiteMain/style.css' %}" />
+</head>
+<body>
+    <div class="jumbotron">
+      <h1>Smart City</h1>
+      <p>Look for places near you!</p>
+    </div>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Smart City</a>
+      </div>
+      <ul class="nav navbar-nav">
+	    {% if user.is_authenticated %}
+        <li class="active"><a href="/information">Home <span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Search for an item   <span class="glyphicon glyphicon-globe"> <span class="caret"></span></span></a>
+          <ul class="dropdown-menu">
+            <li>Choose a City</li>
+            <li><a href="/categories">Adelaide</a></li>
+            <li><a href="/categories">Brisbane</a></li>
+            <li><a href="/categories">Canberra</a></li>
+            <li><a href="/categories">Darwin</a></li>
+            <li><a href="/categories">Hobart</a></li>
+            <li><a href="/categories">Melbourne</a></li>
+            <li><a href="/categories">Perth</a></li>
+            <li><a href="/categories">Sydney</a></li>
+          </ul>
+        </li>
+		<li><a href="/favourites">Favourites   <span class="glyphicon glyphicon-star"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<li><a href="/profile">Profile   <span class="glyphicon glyphicon-user"></a></li>
+        <li><a href="/help">Help   <span class="glyphicon glyphicon-question-sign"></a></li>
+        <li><a href="/contacts">Contacts   <span class="glyphicon glyphicon-envelope"></a></li>
+		<li><a href="/logout">Logout	<span class="glyphicon glyphicon-log-out"></a></li>
+		{% else %}
+		<li class="active"><a href="/">Home <span class="glyphicon glyphicon-home"></span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/help">Help   <span class="glyphicon glyphicon-question-sign"></a></li>
+        <li><a href="/contacts">Contacts   <span class="glyphicon glyphicon-envelope"></a></li>
+		{% endif %}
+      </ul>
+    </div>
+    </nav> 
+      <!-- these buttons only appear when either a user or admin is logged in-->
+      <!-- Admin -->
+      <!--glyphicon glyphicon-search glyphicon glyphicon-pushpin
+      <button type="button" class="btn btn-primary">Add Admin</button>
+      <button type="button" class="btn btn-primary">Manage Data</button>
+      -->
+      <!-- Users  	glyphicon glyphicon-wrench-->
+      <!-- glyphicon glyphicon-user glyphicon glyphicon-heart
+      <button type="button" class="btn btn-primary">User Page</button>
+      <button type="button" class="btn btn-primary">Favourites</button>
+      <button type="button" class="btn btn-primary">Reviews</button>
+      glyphicon glyphicon-info-sign-->
+
+      <!--
+      Brisbane http://brisbanethreads.com/wp-content/uploads/2016/05/brisbane.jpg
+      Sydney http://www.altmedia.net.au/wp-content/uploads/2015/02/sydney-pic-for-city-hub.jpg
+      Melbourne http://taravels.com/wp-content/uploads/2016/10/Australia-Melbourne-Luna-Park-02.jpg
+      Darwin http://www.blogcdn.com/slideshows/images/slides/125/188/0/S1251880/slug/l/148618341-1.jpg
+      Perth http://perthtouristcentre.com.au/wp-content/uploads/2015/10/Morning-Nature-Early-Over-Perth-Place-Photos.jpg
+      Canberra https://upload.wikimedia.org/wikipedia/commons/6/61/Parliament_House_Canberra_Dusk_Panorama.jpg
+      Hobart https://upload.wikimedia.org/wikipedia/commons/b/b6/Hobart-Tasmania-Australia03.JPG
+      Adelaide https://wallpaperscraft.com/image/adelaide_australia_south_australia_98281_3840x2160.jpg
+      -->
+    </div>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

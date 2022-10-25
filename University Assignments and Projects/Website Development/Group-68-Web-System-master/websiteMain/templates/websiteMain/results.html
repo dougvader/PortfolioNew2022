@@ -1,0 +1,85 @@
+{% extends 'websiteMain/base.html' %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+	<h1>Here are your search results for <b>'{{ query }}'</b></h1>
+	<ul class="pager">
+		<li class="previous"><a href="http://127.0.0.1:8000/categories">Categories</a></li>
+	</ul>
+	<div class="list-group">
+	<table class="table">
+	<tbody>
+	{% for result in results %}
+		<tr>
+		{% if result.mall_ID != null %}
+			<td><a href="/mall_ID/{{result.mall_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_mall/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.hotel_ID != null %}
+			<td><a href="/hotel_ID/{{result.hotel_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_hotel/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.park_ID != null %}
+			<td><a href="/park_ID/{{result.park_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_park/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.college_ID != null %}
+			<td><a href="/college_ID/{{result.college_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_college/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.library_ID != null %}
+			<td><a href="/library_ID/{{result.library_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_library/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.zoo_ID != null %}
+			<td><a href="/zoo_ID/{{result.zoo_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_zoo/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.museum_ID != null %}
+			<td><a href="/museum_ID/{{result.museum_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_museum/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.industry_ID != null %}
+			<td><a href="/industry_ID/{{result.industry_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_industry/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+		
+		<tr>
+		{% if result.restaurant_ID != null %}
+			<td><a href="/restaurant_ID/{{result.restaurant_ID}}" class="list-group-item">{{ result.name }}</a></td>
+			<td><a href="/favourite_restaurant/{{ result.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		{% endif %}
+		</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</div>
+{% else %}
+	<h1>End of information</h1>
+{% endif %}
+
+
+{% endblock %}

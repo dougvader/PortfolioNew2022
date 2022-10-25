@@ -1,0 +1,48 @@
+{% extends 'websiteMain/base.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+
+	<h1>Profile Page for <b>{{user.username}}</b></h1>
+	<br>
+	<h2>Profile Details</h2>
+	
+	<form action="submit" method="post">
+		</div>
+			<div class="well">
+			<div class="panel panel-default">
+	  		<div class="panel-heading">Username:</div>
+	  		<div class="panel-body">{{user.username}}</div>
+			</div>
+			<div class="panel panel-default">
+	  		<div class="panel-heading">User Type:</div>
+	  		<div class="panel-body">{{user.user_type}}</div>
+			</div>
+			<div class="panel panel-default">
+	  		<div class="panel-heading">Date Joined: </div>
+	  		<div class="panel-body">{{user.date_joined}}</div>
+			</div>
+			<div class="panel panel-default">
+	  		<div class="panel-heading">Email</div>
+	  		<input id="email" class="panel-body type="text" name="email" value="{{user.email}}" style="width: 100%;">
+			</div>
+			<div class="panel panel-default">
+	  		<div class="panel-heading">First Name:</div>
+	  		<input id="first_name" class="panel-body type="text" name="first_name" value="{{user.first_name}}" style="width: 100%;">
+			</div>
+			<div class="panel panel-default">
+	  		<div class="panel-heading">Last Name::</div>
+	  		<input id="last_name" class="panel-body type="text" name="last_name" value="{{user.last_name}}" style="width: 100%;">
+	  		<div class="panel-body"></div>
+			</div>
+			<input type="submit">
+			<input type="button" value="Delete User"
+		</div>
+	</form>
+{% else %}
+	<h1>End of information</h1>
+{% endif %}
+
+
+
+{% endblock %}

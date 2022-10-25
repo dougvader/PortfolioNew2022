@@ -1,0 +1,87 @@
+{% extends 'websiteMain/base.html' %}
+{% block body %}
+
+
+
+{% load staticfiles %}
+    <link rel = "stylesheet"
+    type = "text/css"
+    href="{% static 'websiteMain/signin.css' %}" />
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Looking for Places to Go?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <h1>Tourist</h1>
+      <p>Find hotels and important city information.</p>
+       <img src="{% static 'websiteMain/images/tourist.png' %}" width="250" height="250">
+    </div>
+    <div class="col-sm-4"> 
+      <h1>Student</h1>
+      <p>Find colleges and libraries near you.</p>
+       <img src="{% static 'websiteMain/images/student.png' %}" width="250" height="250">
+    </div>
+    <div class="col-sm-4"> 
+      <h1>Businessman</h1>
+      <p>Find industries.</p>
+       <img src="{% static 'websiteMain/images/businessman.png' %}" width="250" height="250">
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container-fluid bg-3 text-center" style="background-color: grey">
+  <br>
+  <div class="container" style="">
+  <form class="form-signin" method="post" action="/">
+  
+  <a href="/register" class="btn btn-primary btn-block">Sign Up</a>
+  </form>
+  </div>
+  <br>
+</div>
+
+<div class="container-fluid bg-3 text-center" style="background-color: white">
+    <form class="form-signin" method="post" action="/">
+	{% csrf_token %}
+        <h1 class="form-signin-heading">Already have an account?<h1> <h2>Sign in</h2>
+
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="username" name="username" class="form-control" placeholder="Username" required>
+        <label for="inputPassword" class="sr-only">Password</label>
+
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+      </form>
+</div>
+
+<div class="container-fluid bg-3 text-center" style="background-color: grey">
+  <br>
+  <div class="container" style="">
+  <form class="form-signin" method="post" action="/">
+  
+  <a href="/password_reset" class="btn btn-primary btn-block">Forgotten Password</a>
+  </form>
+  </div>
+  <br>
+</div>
+
+
+
+{% endblock %}
+
+<!-- http://brisbanethreads.com/wp-content/uploads/2016/05/brisbane.jpg -->
+
+
+
+
+<!-- clip art links for later referencing if needed
+https://openclipart.org/detail/186816/student-with-mortarboard
+https://openclipart.org/detail/277992/work
+https://openclipart.org/detail/148135/plane
+-->
+
+
+<!-- geolocation note to selves-->

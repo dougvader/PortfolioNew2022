@@ -1,0 +1,27 @@
+{% extends 'websiteMain/base.html' %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+	<h1>Industry Information Page</h1>
+	<ul class="pager">
+		<li class="previous"><a href="http://127.0.0.1:8000/categories">Categories</a></li>
+	</ul>
+	<div class="list-group">
+	<table class="table">
+	<tbody>
+	{% for industry in all_industries %}
+		<tr>
+		<td><a href="/industry_ID/{{industry.industry_ID}}" class="list-group-item">{{ industry.name }}</a></td>
+		<td><a href="/favourite_industry/{{ industry.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</div>
+{% else %}
+	<h1>End of information</h1>
+{% endif %}
+
+
+{% endblock %}

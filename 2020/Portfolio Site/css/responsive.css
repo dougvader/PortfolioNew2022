@@ -1,0 +1,40 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+@media screen and (max-width: 500px) {
+    .header_logo_left, .header_logo_right, .welcome_image {
+        display: none;
+    }
+    .welcome_message_text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    .welcome {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .welcome_message {
+        margin-bottom: 1em;
+    }
+    .welcome_message_text {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1000) {
+    .welcome {
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+
+    .welcome_message {
+        width: 100%;
+    }
+    .welcome_message_text {
+        font-size: 40px;
+    }
+}

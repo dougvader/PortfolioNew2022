@@ -1,0 +1,20 @@
+{% extends 'websiteMain/base.html' %}
+{% block body %}
+  <div class="well"><h3>Write a Review for ....</h3></div>
+  <div class="well">
+    <div class="form-group">
+    <label for="sel1">Rating out of 5:</label>
+    <select class="form-control" id="score">
+      <option>5</option>
+      <option>4</option>
+      <option>3</option>
+      <option>2</option>
+      <option>1</option>
+    </select>
+    <label for="comment">Comments:</label>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <button type="button" class="btn btn-default">Submit Review</button>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'websiteMain/base.html' %}
+{% block body %}
+
+{% load staticfiles %}
+    <link rel = "stylesheet"
+    type = "text/css"
+    href="{% static 'websiteMain/style.css' %}" />
+
+<div class="well well-sm"> <h2>Search for a Place</h2>
+<form method="GET" action=''>
+<input type="text" name="query" placeholder="Search a place" value="{{ request.GET.query }}"/>
+<input type="submit" value="Search" />
+</form>
+	
+
+<br>
+</div>
+<div class="well well-sm">
+<h2>Choose a Category</h2>
+<br>
+<div class="col">
+{% for i in categories %}
+<div class="col-sm-2">
+<div class="panel panel-default" style="width:180px;">
+  <div class="panel-heading"><h4>{{ i }}</h4></div>
+  {% if i == 'College' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/colleges">
+  {% endif %}
+  {% if i == 'Hotel' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/hotels">
+  {% endif %}
+  {% if i == 'Park' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/parks">
+  {% endif %}
+  {% if i == 'Mall' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/malls">
+  {% endif %}
+  {% if i == 'Zoo' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/zoos">
+  {% endif %}
+  {% if i == 'Museum' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/museums">
+  {% endif %}
+  {% if i == 'Industry' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/industries">
+  {% endif %}
+  {% if i == 'Restaurant' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/restaurants">
+  {% endif %}
+  {% if i == 'Library' %}
+  <a class="btn btn-default" href="http://127.0.0.1:8000/information/libraries">
+  {% endif %}
+  <div class="panel-body"><img src="{% static 'websiteMain/images/'%}{{ i }}.png" width="122" height="110"></div></a>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}
+
+
+<!-- images reference
+https://openclipart.org/detail/260823/shop15
+https://openclipart.org/detail/213217/museum-icon
+https://openclipart.org/detail/260813/restaurant15
+https://openclipart.org/detail/260714/dogpark15
+https://openclipart.org/detail/260871/zoo15
+https://openclipart.org/detail/205668/hotel-information-sign
+https://openclipart.org/detail/20605/men-in-black
+https://openclipart.org/detail/260698/college15
+https://openclipart.org/detail/173650/library-pictogram
+
+-->

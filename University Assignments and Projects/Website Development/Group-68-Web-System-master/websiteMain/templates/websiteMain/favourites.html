@@ -1,0 +1,126 @@
+{% extends 'websiteMain/base.html' %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+	<h1>Here are your favouite places <b>{{ user.username }}</b></h1>
+	<div class="list-group">
+	<table class="table">
+	<tbody>
+	{% for fav in mall_fav %}
+		{% for mall in malls %}
+			<tr>
+			{% if fav.mall_id == mall.id and fav.user_id == user.id %}
+				<td><a href="/mall_ID/{{mall.mall_ID}}" class="list-group-item">{{ mall.name }}</a></td>
+				<td><a href="/favourite_mall/{{ mall.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in hotel_fav %}
+		{% for hotel in hotels %}
+			<tr>
+			{% if fav.hotel_id == hotel.id and fav.user_id == user.id %}
+				<td><a href="/hotel_ID/{{hotel.hotel_ID}}" class="list-group-item">{{ hotel.name }}</a></td>
+				<td><a href="/favourite_hotel/{{ hotel.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in park_fav %}
+		{% for park in parks %}
+			<tr>
+			{% if fav.park_id == park.id and fav.user_id == user.id %}
+				<td><a href="/park_ID/{{park.park_ID}}" class="list-group-item">{{ park.name }}</a></td>
+				<td><a href="/favourite_park/{{ park.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in college_fav %}
+		{% for college in colleges %}
+			<tr>
+			{% if fav.college_id == college.id and fav.user_id == user.id %}
+				<td><a href="/college_ID/{{college.college_ID}}" class="list-group-item">{{ college.name }}</a></td>
+				<td><a href="/favourite_college/{{ college.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in library_fav %}
+		{% for library in libraries %}
+			<tr>
+			{% if fav.library_id == library.id and fav.user_id == user.id %}
+				<td><a href="/library_ID/{{library.library_ID}}" class="list-group-item">{{ library.name }}</a></td>
+				<td><a href="/favourite_library/{{ library.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in zoo_fav %}
+		{% for zoo in zoos %}
+			<tr>
+			{% if fav.zoo_id == zoo.id and fav.user_id == user.id %}
+				<td><a href="/zoo_ID/{{zoo.zoo_ID}}" class="list-group-item">{{ zoo.name }}</a></td>
+				<td><a href="/favourite_zoo/{{ zoo.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in museum_fav %}
+		{% for museum in museums %}
+			<tr>
+			{% if fav.museum_id == museum.id and fav.user_id == user.id %}
+				<td><a href="/museum_ID/{{museum.museum_ID}}" class="list-group-item">{{ museum.name }}</a></td>
+				<td><a href="/favourite_museum/{{ museum.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in industry_fav %}
+		{% for industry in industries %}
+			<tr>
+			{% if fav.industry_id == industry.id and fav.user_id == user.id %}
+				<td><a href="/industry_ID/{{industry.industry_ID}}" class="list-group-item">{{ industry.name }}</a></td>
+				<td><a href="/favourite_industry/{{ industry.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	{% for fav in restaurant_fav %}
+		{% for restaurant in restaurants %}
+			<tr>
+			{% if fav.restaurant_id == restaurant.id and fav.user_id == user.id %}
+				<td><a href="/restaurant_ID/{{restaurant.restaurant_ID}}" class="list-group-item">{{ restaurant.name }}</a></td>
+				<td><a href="/favourite_restaurant/{{ restaurant.id }}/{{ user.id }}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if result.id != null %}active{% endif %}"></span></a></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		
+	{% endfor %}
+	
+	</tbody>
+	</table>
+	</div>
+{% else %}
+	<h1>End of information</h1>
+{% endif %}
+
+
+{% endblock %}

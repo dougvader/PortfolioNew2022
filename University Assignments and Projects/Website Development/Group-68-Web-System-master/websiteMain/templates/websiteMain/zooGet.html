@@ -1,0 +1,103 @@
+{% extends 'websiteMain/base.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+	<ul class="pager">
+		<li class="previous"><a href="http://127.0.0.1:8000/information/zoos">Zoos</a></li>
+	</ul>
+	<div class="row">
+
+	<div class="col-md-6">
+		<div class="well">
+		<img src="{{zoo.image_url}}" alt="HTML5 Icon" style="width:100%;height:100%;">
+	</div>
+		<div class="well">
+		<div class="panel panel-default">
+  		<div class="panel-heading">Mall</div>
+  		<div class="panel-body">{{zoo.name}}</div>
+		</div>
+		<div class="panel panel-default">
+  		<div class="panel-heading">Address</div>
+  		<div class="panel-body">{{zoo.address}}</div>
+		</div>
+		<div class="panel panel-default">
+  		<div class="panel-heading">Phone Number</div>
+  		<div class="panel-body">{{zoo.phone_number}}</div>
+		</div>
+		<div class="panel panel-default">
+  		<div class="panel-heading">Email</div>
+  		<div class="panel-body">{{zoo.email}}</div>
+		</div>
+		<div class="panel panel-default">
+  		<div class="panel-heading">City</div>
+  		<div class="panel-body">{{zoo.city}}</div>
+		</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="well">
+		<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+
+function myMap() {
+var location = {lat: {{zoo.latitude}}, lng: {{zoo.longitude}}};
+var mapProp= {
+    center:new google.maps.LatLng({{zoo.latitude}},{{zoo.longitude}}),
+    zoom:18,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+	position: location,
+	map: map,
+});
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJuOw0Qq19zTsiJWvFxHFnbWGsgcNPQ88&callback=myMap"></script>
+</div>
+	<div class="well">
+	  <div class="well"><h4>Write a Review for {{zoo.name}}</h4></div>
+	  <div class="well">
+	  	<form action="/review_zoo/{{ zoo.id }}/{{ user.id }}" method="get" id="review_form">
+		    <div class="form-group">
+		    <label for="sel1">Rating out of 5:</label>
+		    <select class="form-control" name="score">
+		      <option>5</option>
+		      <option>4</option>
+		      <option>3</option>
+		      <option>2</option>
+		      <option>1</option>
+		    </select>
+		    <label for="comment">Optional comments:</label>
+		    <textarea class="form-control" rows="5" name="comment"></textarea>
+		    </div>
+		    <button type="submit" class="btn btn-default">Submit Review</button>
+		    <div class="well" style="margin-top: 25px">Note: If you have already written a review before for this item, writing a new review will just replace the old one.</div>
+		</form>
+	  </div>
+	</div>
+	</div>
+
+	<div class="col-md-12">
+		<div class="well">
+		<div class="well"><h4>Reviews for {{zoo.name}}</h4></div>
+			{% for i in zoo_rev %}
+			<div class="panel panel-default">
+  				<div class="panel-heading">{{i.user_name}} gave {{zoo.name}} a {{i.rating}}/5</div>
+  				<div class="panel-body">{{i.comment}}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	</div>
+
+{% else %}
+	<h1>End of information</h1>
+{% endif %}
+
+
+
+{% endblock %}
