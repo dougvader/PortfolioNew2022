@@ -1,0 +1,15 @@
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\bin\Debug\netcoreapp3.1\FindDeadPlaylist.exe
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\bin\Debug\netcoreapp3.1\FindDeadPlaylist.deps.json
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\bin\Debug\netcoreapp3.1\FindDeadPlaylist.runtimeconfig.json
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\bin\Debug\netcoreapp3.1\FindDeadPlaylist.runtimeconfig.dev.json
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\bin\Debug\netcoreapp3.1\FindDeadPlaylist.dll
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\bin\Debug\netcoreapp3.1\FindDeadPlaylist.pdb
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.Form1.resources
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.csproj.GenerateResource.cache
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.AssemblyInfoInputs.cache
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.AssemblyInfo.cs
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.csproj.CoreCompileInputs.cache
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.dll
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.pdb
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.genruntimeconfig.cache
+D:\Documents\Projects\FindDeadPlaylist\FindDeadPlaylist\obj\Debug\netcoreapp3.1\FindDeadPlaylist.csprojAssemblyReference.cache
