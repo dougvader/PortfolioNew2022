@@ -19,8 +19,8 @@ class Program
     {
         try
         {
-            var clientId = "f4422a5ccf084768944f1f73042cb765";
-            var clientSecret = "25a43da8ae6a424c81bd6e06d8999084";
+            var clientId = "AhAhAhhh";
+            var clientSecret = "AhAhAhhh";
             var redirectUri = "http://localhost/"; // Replace with your redirect URI
 
             var authorizationCode = await GetAuthorizationCode(clientId, redirectUri);
