@@ -96,9 +96,9 @@ class Program
 
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement emailInput = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("email")));
-            emailInput.SendKeys("djdougstar@gmail.com");
+            emailInput.SendKeys("");
             IWebElement passwordInput = driver.FindElement(By.Id("pass"));
-            passwordInput.SendKeys("D0ugvader91@");
+            passwordInput.SendKeys("");
 
             IWebElement loginButton = driver.FindElement(By.Id("loginbutton"));
             loginButton.Click();
